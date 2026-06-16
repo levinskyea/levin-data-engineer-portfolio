@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
 
-export type SectionId = "projects" | "dashboard" | "skills" | "experience" | "contact";
+export type SectionId = "projects" | "dashboard" | "skills" | "experience" | "contact" | "etl-demo";
 
 export const SECTIONS: SectionId[] = [
   "projects",
   "dashboard",
   "skills",
   "experience",
-  "contact"
+  "contact",
+  "etl-demo"
 ];
 
 export function useActiveSection() {

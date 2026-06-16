@@ -3,18 +3,18 @@ import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useActiveSection, type SectionId } from "@/hooks/use-active-section";
 import { useScrollContext } from "@/context/scroll-context";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { id: SectionId; label: string }[] = [
-  { id: "dashboard", label: "Dashboard" },
+  { id: "dashboard", label: "About" },
   { id: "projects", label: "Projects" },
+  { id: "etl-demo", label: "ETL Demo" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" },
+  { id: "contact", label: "Contact" }
 ];
 
 export function Navbar() {
@@ -113,6 +113,19 @@ export function Navbar() {
               ETL Demo
             </Link>
           </li>
+          <li>
+            <Link
+              href="/etl-demo"
+              className={cn(
+                "text-sm transition-colors hover:text-foreground",
+                pathname === "/etl-demo"
+                  ? "font-bold text-foreground"
+                  : "text-muted-foreground",
+              )}
+            >
+              ETL Demo
+            </Link>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
@@ -165,20 +178,6 @@ export function Navbar() {
                 </button>
               </li>
             ))}
-            <li>
-              <Link
-                href="/etl-demo"
-                onClick={() => setMenuOpen(false)}
-                className={cn(
-                  "text-sm transition-colors hover:text-foreground",
-                  pathname === "/etl-demo"
-                    ? "font-bold text-foreground"
-                    : "text-muted-foreground",
-                )}
-              >
-                ETL Demo
-              </Link>
-            </li>
           </ul>
         </div>
       )}

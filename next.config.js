@@ -7,7 +7,7 @@ const nextConfig = {
     ]
   },
   async rewrites() {
-    const sections = ["projects", "dashboard", "skills", "experience", "contact"];
+    const sections = ["projects", "dashboard", "skills", "experience", "contact", "etl-demo"];
     return sections.map((s) => ({
       source: `/${s}`,
       destination: "/"
