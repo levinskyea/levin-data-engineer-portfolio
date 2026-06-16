@@ -108,7 +108,11 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-3"
         >
           <Button size="lg" variant="outline" asChild>
-            <a href="/resume.pdf" download aria-label="Download resume PDF">
+            <a
+              href="/Levin Skye_Aligway_Resume.pdf"
+              download
+              aria-label="Download resume PDF"
+            >
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </a>
