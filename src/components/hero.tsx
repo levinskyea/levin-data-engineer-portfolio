@@ -80,15 +80,23 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mb-2 text-sm text-muted-foreground"
+        >
+          📍 Cebu, Philippines
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto"
         >
+          IT Support Engineer with hands-on experience in SQL, data troubleshooting, reporting, and system integrations.{" "}
           <br />
-          An IT Support Engineer who works with SQL and data troubleshooting.{" "}
+          Currently building Data Engineering solutions using Python, PostgreSQL, ETL workflows, and cloud technologies.{" "}
           <br />
-          Got hooked on data—and now I build things that make it make sense.{" "}
-          <br />
-          Currently shaping my next chapter in Data Engineering.
+          📍 Cebu, Philippines
         </motion.p>
 
         <motion.div
