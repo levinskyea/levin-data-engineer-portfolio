@@ -34,7 +34,7 @@ export function Hero() {
         style={{
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
+          backgroundSize: "40px 40px",
         }}
       />
 
