@@ -107,15 +107,16 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          {/* <Button size="lg" onClick={() => scrollTo("projects")}>
-            View Projects
-          </Button> */}
           <Button size="lg" variant="outline" asChild>
             <a href="/resume.pdf" download aria-label="Download resume PDF">
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </a>
           </Button>
+          <Button size="lg" onClick={() => scrollTo("projects")}>
+            View Projects
+          </Button>
+          <br />
           <Button size="icon" variant="ghost" asChild>
             <a
               href="https://github.com/levinskyea"
