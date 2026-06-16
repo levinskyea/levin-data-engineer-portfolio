@@ -88,7 +88,7 @@ export function Hero() {
           📍 Cebu, Philippines
         </motion.p>
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -99,7 +99,7 @@ export function Hero() {
           troubleshooting, reporting, and system integrations. Currently
           building Data Engineering solutions using Python, PostgreSQL, ETL
           workflows, and cloud technologies.{" "}
-        </motion.p>
+        </motion.p> */}
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -107,9 +107,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          <Button size="lg" onClick={() => scrollTo("projects")}>
+          {/* <Button size="lg" onClick={() => scrollTo("projects")}>
             View Projects
-          </Button>
+          </Button> */}
           <Button size="lg" variant="outline" asChild>
             <a href="/resume.pdf" download aria-label="Download resume PDF">
               <Download className="mr-2 h-4 w-4" />
