@@ -6,8 +6,13 @@ import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 
 function YoutubeIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
     </svg>
   );
 }
@@ -18,14 +23,17 @@ function scrollTo(id: string) {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
+    <section
+      id="hero"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center"
+    >
       {/* Subtle grid background */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.07]"
         style={{
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
-          backgroundSize: "64px 64px"
+          backgroundSize: "64px 64px",
         }}
       />
 
@@ -40,7 +48,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Badge variant="secondary" className="mb-6 text-xs tracking-widest uppercase">
+          <Badge
+            variant="secondary"
+            className="mb-6 text-xs tracking-widest uppercase"
+          >
             Open to Data Engineering roles
           </Badge>
         </motion.div>
@@ -97,17 +108,32 @@ export function Hero() {
             </a>
           </Button>
           <Button size="icon" variant="ghost" asChild>
-            <a href="https://github.com/levinskyea" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <a
+              href="https://github.com/levinskyea"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+            >
               <Github className="h-4 w-4" />
             </a>
           </Button>
           <Button size="icon" variant="ghost" asChild>
-            <a href="https://linkedin.com/in/levinskyealigway" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <a
+              href="https://linkedin.com/in/levinskyealigway"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+            >
               <Linkedin className="h-4 w-4" />
             </a>
           </Button>
           <Button size="icon" variant="ghost" asChild>
-            <a href="https://youtube.com/@levinskyea" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
+            <a
+              href="https://youtube.com/@levinskyea"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube channel"
+            >
               <YoutubeIcon />
             </a>
           </Button>
@@ -120,7 +146,10 @@ export function Hero() {
         transition={{ duration: 0.5, delay: 1.2 }}
         className="absolute bottom-8"
       >
-        <button onClick={() => scrollTo("projects")} aria-label="Scroll to projects">
+        <button
+          onClick={() => scrollTo("projects")}
+          aria-label="Scroll to projects"
+        >
           <ArrowDown className="h-5 w-5 animate-bounce text-muted-foreground" />
         </button>
       </motion.div>
