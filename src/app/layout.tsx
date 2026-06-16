@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://levin-data-engineer.vercel.app",
+    url: "https://www.levinskye.com",
     title: "Levin Skye Aligway | Data Engineer Portfolio",
     description:
       "IT Support Engineer transitioning into Data Engineering — SQL, monitoring, and automation.",
