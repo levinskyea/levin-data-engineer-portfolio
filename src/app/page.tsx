@@ -36,10 +36,10 @@ export default function Home() {
     <>
       <Hero />
       <Projects />
-      <EtlDemo />
-      <Dashboard />
-      <Skills />
       <Experience />
+      <Skills />
+      <Dashboard />
+      <EtlDemo />
       <Contact />
     </>
   );

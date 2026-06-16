@@ -86,7 +86,8 @@ export function EtlDemo() {
   const isRunning = ["extracting", "transforming", "loading"].includes(stage);
 
   return (
-    <section id="etl-demo" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="etl-demo" className="bg-muted/30 py-24">
+      <div className="mx-auto max-w-6xl px-6">
       <FadeIn>
         <div className="mb-2 flex items-center gap-3">
           <h2 className="text-3xl font-bold">ETL Pipeline Demo</h2>
@@ -267,6 +268,7 @@ export function EtlDemo() {
           )}
         </div>
       </FadeIn>
+      </div>
     </section>
   );
 }
