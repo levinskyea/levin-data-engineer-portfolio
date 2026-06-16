@@ -7,13 +7,25 @@ import { Skills } from "@/components/skills";
 import { Experience } from "@/components/experience";
 import { Contact } from "@/components/contact";
 import { SECTIONS, type SectionId } from "@/hooks/use-active-section";
+import { useScrollContext } from "@/context/scroll-context";
 
 export default function Home() {
-  // On direct URL visit (e.g. /skills), scroll to the matching section
+  const { pendingSection, clearPending } = useScrollContext();
+
+  // Scroll to section requested by navbar (cross-route navigation)
+  useEffect(() => {
+    if (!pendingSection) return;
+    const el = document.getElementById(pendingSection);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      clearPending();
+    }
+  }, [pendingSection, clearPending]);
+
+  // On direct URL visit (e.g. /skills), scroll to matching section
   useEffect(() => {
     const path = window.location.pathname.replace("/", "") as SectionId;
     if (SECTIONS.includes(path)) {
-      // Small delay to let the page render first
       const t = setTimeout(() => {
         document.getElementById(path)?.scrollIntoView({ behavior: "smooth" });
       }, 100);

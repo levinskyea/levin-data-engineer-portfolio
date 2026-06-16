@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ScrollProvider } from "@/context/scroll-context";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -54,9 +55,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <ScrollProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </ScrollProvider>
         </ThemeProvider>
       </body>
     </html>
