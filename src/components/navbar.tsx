@@ -4,7 +4,8 @@ import { Moon, Sun, Database, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useActiveSection, SECTIONS, type SectionId } from "@/hooks/use-active-section";
+import { usePathname, useRouter } from "next/navigation";
+import { useActiveSection, type SectionId } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { id: SectionId; label: string }[] = [
@@ -21,6 +22,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { activeSection, scrollToSection, scrollToTop } = useActiveSection();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -28,6 +31,25 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function handleNavClick(id: SectionId, closeMenu?: () => void) {
+    if (pathname !== "/") {
+      // Navigate home first, then scroll after page renders
+      router.push(`/${id}`);
+      closeMenu?.();
+    } else {
+      scrollToSection(id, closeMenu);
+    }
+  }
+
+  function handleLogoClick() {
+    if (pathname !== "/") {
+      router.push("/");
+    } else {
+      scrollToTop(() => setMenuOpen(false));
+    }
+    setMenuOpen(false);
+  }
 
   return (
     <header
@@ -40,7 +62,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <button
-          onClick={() => scrollToTop(() => setMenuOpen(false))}
+          onClick={handleLogoClick}
           className="flex items-center gap-2 font-bold text-primary"
         >
           <Database className="h-5 w-5" />
@@ -52,10 +74,10 @@ export function Navbar() {
           {NAV_LINKS.map((l) => (
             <li key={l.id}>
               <button
-                onClick={() => scrollToSection(l.id)}
+                onClick={() => handleNavClick(l.id)}
                 className={cn(
                   "text-sm transition-colors hover:text-foreground",
-                  activeSection === l.id
+                  pathname === "/" && activeSection === l.id
                     ? "font-medium text-foreground"
                     : "text-muted-foreground"
                 )}
@@ -67,7 +89,12 @@ export function Navbar() {
           <li>
             <Link
               href="/etl-demo"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className={cn(
+                "text-sm transition-colors hover:text-foreground",
+                pathname === "/etl-demo"
+                  ? "font-medium text-foreground"
+                  : "text-muted-foreground"
+              )}
             >
               ETL Demo
             </Link>
@@ -104,10 +131,10 @@ export function Navbar() {
             {NAV_LINKS.map((l) => (
               <li key={l.id}>
                 <button
-                  onClick={() => scrollToSection(l.id, () => setMenuOpen(false))}
+                  onClick={() => handleNavClick(l.id, () => setMenuOpen(false))}
                   className={cn(
                     "w-full text-left text-sm transition-colors hover:text-foreground",
-                    activeSection === l.id
+                    pathname === "/" && activeSection === l.id
                       ? "font-medium text-foreground"
                       : "text-muted-foreground"
                   )}
@@ -120,7 +147,12 @@ export function Navbar() {
               <Link
                 href="/etl-demo"
                 onClick={() => setMenuOpen(false)}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className={cn(
+                  "text-sm transition-colors hover:text-foreground",
+                  pathname === "/etl-demo"
+                    ? "font-medium text-foreground"
+                    : "text-muted-foreground"
+                )}
               >
                 ETL Demo
               </Link>
