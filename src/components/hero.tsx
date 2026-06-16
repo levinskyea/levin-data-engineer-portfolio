@@ -41,7 +41,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-4 text-5xl font-bold tracking-tight md:text-6xl"
+          className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
         >
           Levin Skye{" "}
           <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">

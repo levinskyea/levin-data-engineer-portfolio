@@ -76,10 +76,10 @@ export function Dashboard() {
 
         <FadeIn delay={0.1}>
           <Tabs defaultValue="activity">
-            <TabsList className="mb-6">
-              <TabsTrigger value="activity">System Activity</TabsTrigger>
-              <TabsTrigger value="incidents">Incident Counts</TabsTrigger>
-              <TabsTrigger value="table">Incident Log</TabsTrigger>
+            <TabsList className="mb-6 w-full sm:w-auto">
+              <TabsTrigger value="activity" className="flex-1 sm:flex-none">System Activity</TabsTrigger>
+              <TabsTrigger value="incidents" className="flex-1 sm:flex-none">Incident Counts</TabsTrigger>
+              <TabsTrigger value="table" className="flex-1 sm:flex-none">Incident Log</TabsTrigger>
             </TabsList>
 
             <TabsContent value="activity">

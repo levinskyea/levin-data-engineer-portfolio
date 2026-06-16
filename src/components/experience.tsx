@@ -53,10 +53,10 @@ export function Experience() {
             <FadeIn key={i} delay={i * 0.1}>
               <div className="relative border-l-2 border-border pl-6">
                 <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-primary bg-background" />
-                <div className="mb-1 flex flex-wrap items-baseline gap-3">
+                <div className="mb-1 flex flex-col gap-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-3">
                   <h3 className="text-lg font-semibold">{exp.role}</h3>
                   <span className="text-muted-foreground">@ {exp.company}</span>
-                  <span className="ml-auto text-sm text-muted-foreground">{exp.period}</span>
+                  <span className="text-sm text-muted-foreground sm:ml-auto">{exp.period}</span>
                 </div>
                 <ul className="mb-4 space-y-1.5">
                   {exp.highlights.map((h, j) => (

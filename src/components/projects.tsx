@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/fade-in";
@@ -25,13 +31,17 @@ export function Projects() {
                   <div className="flex items-start justify-between">
                     <div>
                       <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <CardDescription className="mt-1">{project.subtitle}</CardDescription>
+                      <CardDescription className="mt-1">
+                        {project.subtitle}
+                      </CardDescription>
                     </div>
                     <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool) => (
                       <Badge key={tool} variant="secondary" className="text-xs">
@@ -48,7 +58,11 @@ export function Projects() {
 
       <FadeIn delay={0.3} className="mt-8 text-center">
         <Button variant="outline" asChild>
-          <a href="https://github.com/levinaligway" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/levinskyea"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View all on GitHub
           </a>
         </Button>
