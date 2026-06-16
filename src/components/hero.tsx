@@ -83,7 +83,6 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto"
         >
-          Hi, I&apos;m Skye.{" "}
           <br />
           An IT Support Engineer who works with SQL and data troubleshooting.{" "}
           <br />
