@@ -63,7 +63,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-4 text-xl font-medium text-muted-foreground"
         >
-          IT Support Engineer → Data Engineer
+          Aspiring Data Engineer
         </motion.p>
 
         <motion.p
