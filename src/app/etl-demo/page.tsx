@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -100,12 +100,12 @@ export default function EtlDemoPage() {
           const stageMap = { Extract: ["extracting", "extracted", "transforming", "transformed", "loading", "loaded"], Transform: ["transforming", "transformed", "loading", "loaded"], Load: ["loading", "loaded"] };
           const active = stageMap[s].includes(stage);
           return (
-            <>
+            <React.Fragment key={s}>
               <span className={`rounded-full px-3 py-1 text-xs transition-colors ${active ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
                 {s}
               </span>
               {i < 2 && <ArrowRight className="h-4 w-4 text-muted-foreground" />}
-            </>
+            </React.Fragment>
           );
         })}
         <div className="ml-auto flex gap-2">

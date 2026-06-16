@@ -1,18 +1,48 @@
+import { Github, Linkedin, Mail } from "lucide-react";
+
 export function Footer() {
   return (
-    <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
-      <p>
-        Built with Next.js, Tailwind CSS & shadcn/ui ·{" "}
-        <a
-          href="https://github.com/levinaligway"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline-offset-4 hover:text-foreground hover:underline"
-        >
-          Source on GitHub
-        </a>
-      </p>
-      <p className="mt-1">© {new Date().getFullYear()} Levin Skye Aligway</p>
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div>
+            <p className="text-sm font-semibold text-foreground">Levin Skye Aligway</p>
+            <p className="text-xs text-muted-foreground mt-0.5">IT Support Engineer → Data Engineer</p>
+          </div>
+
+          <div className="flex items-center gap-5">
+            <a
+              href="mailto:levinskyebenatiro@gmail.com"
+              aria-label="Email"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Mail className="h-4 w-4" />
+            </a>
+            <a
+              href="https://github.com/levinskyea"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+            <a
+              href="https://linkedin.com/in/levinskyealigway"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+          </div>
+
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Levin Skye Aligway. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }

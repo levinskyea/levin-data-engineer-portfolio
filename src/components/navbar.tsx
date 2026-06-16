@@ -3,15 +3,19 @@ import { useTheme } from "next-themes";
 import { Moon, Sun, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const links = [
-  { href: "#projects", label: "Projects" },
-  { href: "#dashboard", label: "Dashboard" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "/etl-demo", label: "ETL Demo" },
-  { href: "#contact", label: "Contact" }
+  { href: "projects", label: "Projects" },
+  { href: "dashboard", label: "Dashboard" },
+  { href: "skills", label: "Skills" },
+  { href: "experience", label: "Experience" },
+  { href: "contact", label: "Contact" }
 ];
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -34,22 +38,33 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2 font-bold text-primary">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center gap-2 font-bold text-primary"
+        >
           <Database className="h-5 w-5" />
           <span>Levin.dev</span>
-        </a>
+        </button>
 
         <ul className="hidden items-center gap-6 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
+              <button
+                onClick={() => scrollTo(l.href)}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
-              </a>
+              </button>
             </li>
           ))}
+          <li>
+            <Link
+              href="/etl-demo"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              ETL Demo
+            </Link>
+          </li>
         </ul>
 
         {mounted && (

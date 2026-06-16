@@ -60,7 +60,7 @@ export function Experience() {
                 </div>
                 <ul className="mb-4 space-y-1.5">
                   {exp.highlights.map((h, j) => (
-                    <li key={j} className="text-sm text-muted-foreground before:mr-2 before:content-['→']">
+                    <li key={j} className="text-sm text-muted-foreground list-disc ml-4">
                       {h}
                     </li>
                   ))}
