@@ -72,10 +72,13 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto"
         >
-          Detail-oriented IT professional with 3+ years of experience in SQL (PostgreSQL, Oracle)
-          and data analysis, specializing in data validation, reporting, and troubleshooting
-          data-related issues. Proven ability to generate data insights, perform root cause analysis,
-          and support data integrity across systems — now transitioning into a Data Engineer role.
+          Hi, I&apos;m Skye.{" "}
+          <br />
+          An IT Support Engineer who works with SQL and data troubleshooting.{" "}
+          <br />
+          Got hooked on data—and now I build things that make it make sense.{" "}
+          <br />
+          Currently shaping my next chapter in Data Engineering.
         </motion.p>
 
         <motion.div
