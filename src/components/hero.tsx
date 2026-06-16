@@ -74,8 +74,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-4 text-xl font-medium text-muted-foreground"
         >
-          Aspiring Data Engineer | IT Support Engineer | Full-Stack Software
-          Engineer
+          Data Engineer • IT Support Engineer • Full-Stack Software Engineer
         </motion.p>
 
         <motion.p
