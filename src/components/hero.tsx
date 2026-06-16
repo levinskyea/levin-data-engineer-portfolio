@@ -28,13 +28,33 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center"
     >
-      {/* Subtle grid background */}
+      {/* Grid background — reduced opacity */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.02] dark:opacity-[0.04]"
         style={{
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
           backgroundSize: "64px 64px",
+        }}
+      />
+
+      {/* Blurred glow blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full opacity-20 blur-[120px] dark:opacity-30"
+          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.5), transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-0 right-1/4 h-[300px] w-[300px] rounded-full opacity-10 blur-[100px] dark:opacity-20"
+          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.4), transparent 70%)" }}
+        />
+      </div>
+
+      {/* Radial gradient behind text */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: "radial-gradient(circle at 50% 45%, rgba(59,130,246,0.12), transparent 60%)",
         }}
       />
 
