@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     description:
       "IT Support Engineer transitioning into Data Engineering — SQL, monitoring, and automation.",
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png"
+  },
   robots: { index: true, follow: true },
 };
 
