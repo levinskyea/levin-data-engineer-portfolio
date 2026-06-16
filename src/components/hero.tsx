@@ -92,11 +92,11 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto"
         >
-          IT Support Engineer with hands-on experience in SQL, data troubleshooting, reporting, and system integrations.{" "}
           <br />
-          Currently building Data Engineering solutions using Python, PostgreSQL, ETL workflows, and cloud technologies.{" "}
-          <br />
-          📍 Cebu, Philippines
+          IT Support Engineer with hands-on experience in SQL, data
+          troubleshooting, reporting, and system integrations. <br />
+          Currently building Data Engineering solutions using Python,
+          PostgreSQL, ETL workflows, and cloud technologies.{" "}
         </motion.p>
 
         <motion.div
