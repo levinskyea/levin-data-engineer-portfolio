@@ -14,40 +14,53 @@ export const SECTIONS: SectionId[] = [
 export function useActiveSection() {
   const [activeSection, setActiveSection] = useState<SectionId | null>(null);
   const isProgrammatic = useRef(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const fallbackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Releases the programmatic lock — uses scrollend if available, falls back to timer
+  const releaseLock = useCallback(() => {
+    if (fallbackTimer.current) clearTimeout(fallbackTimer.current);
+
+    const supportsScrollEnd = "onscrollend" in window;
+
+    if (supportsScrollEnd) {
+      const handler = () => {
+        isProgrammatic.current = false;
+        window.removeEventListener("scrollend", handler);
+      };
+      window.addEventListener("scrollend", handler, { once: true });
+      // Safety fallback in case scrollend never fires
+      fallbackTimer.current = setTimeout(() => {
+        isProgrammatic.current = false;
+        window.removeEventListener("scrollend", handler);
+      }, 2000);
+    } else {
+      // Fallback for browsers without scrollend (Safari < 16)
+      fallbackTimer.current = setTimeout(() => {
+        isProgrammatic.current = false;
+      }, 2000);
+    }
+  }, []);
 
   const scrollToSection = useCallback((id: SectionId, closeMenu?: () => void) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    // Block observer from overriding URL during programmatic scroll
     isProgrammatic.current = true;
-    if (timer.current) clearTimeout(timer.current);
-
     el.scrollIntoView({ behavior: "smooth" });
     setActiveSection(id);
     window.history.pushState({ section: id }, "", `/${id}`);
     closeMenu?.();
-
-    // Re-enable observer after smooth scroll settles (~800ms)
-    timer.current = setTimeout(() => {
-      isProgrammatic.current = false;
-    }, 800);
-  }, []);
+    releaseLock();
+  }, [releaseLock]);
 
   const scrollToTop = useCallback((closeMenu?: () => void) => {
     isProgrammatic.current = true;
-    if (timer.current) clearTimeout(timer.current);
-
     window.scrollTo({ top: 0, behavior: "smooth" });
     setActiveSection(null);
     window.history.pushState({ section: null }, "", "/");
     closeMenu?.();
-
-    timer.current = setTimeout(() => {
-      isProgrammatic.current = false;
-    }, 800);
-  }, []);
+    releaseLock();
+  }, [releaseLock]);
 
   // IntersectionObserver — sync URL on manual scroll
   useEffect(() => {
@@ -95,9 +108,7 @@ export function useActiveSection() {
   useEffect(() => {
     function onPopState(e: PopStateEvent) {
       const id = e.state?.section as SectionId | null;
-
       isProgrammatic.current = true;
-      if (timer.current) clearTimeout(timer.current);
 
       if (id) {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -106,15 +117,12 @@ export function useActiveSection() {
         window.scrollTo({ top: 0, behavior: "smooth" });
         setActiveSection(null);
       }
-
-      timer.current = setTimeout(() => {
-        isProgrammatic.current = false;
-      }, 800);
+      releaseLock();
     }
 
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, []);
+  }, [releaseLock]);
 
   return { activeSection, scrollToSection, scrollToTop };
 }

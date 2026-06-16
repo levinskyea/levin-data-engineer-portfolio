@@ -74,7 +74,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-4 text-xl font-medium text-muted-foreground"
         >
-          Aspiring Data Engineer
+          Aspiring Data Engineer | IT Support Engineer | Full-Stack Software
+          Engineer
         </motion.p>
 
         <motion.p
@@ -94,9 +95,9 @@ export function Hero() {
         >
           <br />
           IT Support Engineer with hands-on experience in SQL, data
-          troubleshooting, reporting, and system integrations. 
-          Currently building Data Engineering solutions using Python,
-          PostgreSQL, ETL workflows, and cloud technologies.{" "}
+          troubleshooting, reporting, and system integrations. Currently
+          building Data Engineering solutions using Python, PostgreSQL, ETL
+          workflows, and cloud technologies.{" "}
         </motion.p>
 
         <motion.div
