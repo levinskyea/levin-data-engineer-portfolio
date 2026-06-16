@@ -42,11 +42,17 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
           className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full opacity-20 blur-[120px] dark:opacity-30"
-          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.5), transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59,130,246,0.5), transparent 70%)",
+          }}
         />
         <div
           className="absolute bottom-0 right-1/4 h-[300px] w-[300px] rounded-full opacity-10 blur-[100px] dark:opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.4), transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, rgba(34,211,238,0.4), transparent 70%)",
+          }}
         />
       </div>
 
@@ -54,7 +60,8 @@ export function Hero() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "radial-gradient(circle at 50% 45%, rgba(59,130,246,0.12), transparent 60%)",
+          background:
+            "radial-gradient(circle at 50% 45%, rgba(59,130,246,0.12), transparent 60%)",
         }}
       />
 
@@ -129,7 +136,7 @@ export function Hero() {
         >
           <Button size="lg" variant="outline" asChild>
             <a
-              href="/Levin Skye_Aligway_Resume.pdf"
+              href="/Levin Skye_Aligway_Resume_v2.pdf"
               download
               aria-label="Download resume PDF"
             >
