@@ -9,7 +9,7 @@ import { useActiveSection, type SectionId } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { id: SectionId; label: string }[] = [
-  { id: "dashboard", label: "About" },
+  { id: "dashboard", label: "Dashboard" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
