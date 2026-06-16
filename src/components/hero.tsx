@@ -81,12 +81,12 @@ export function Hero() {
             </a>
           </Button>
           <Button size="icon" variant="ghost" asChild>
-            <a href="https://github.com/levinaligway" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <a href="https://github.com/levinskyea" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
               <Github className="h-4 w-4" />
             </a>
           </Button>
           <Button size="icon" variant="ghost" asChild>
-            <a href="https://linkedin.com/in/levinaligway" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <a href="https://linkedin.com/in/levinskyealigway" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
               <Linkedin className="h-4 w-4" />
             </a>
           </Button>

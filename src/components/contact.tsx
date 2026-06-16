@@ -72,29 +72,29 @@ export function Contact() {
             <h3 className="mb-4 text-lg font-semibold">Connect with me</h3>
             <div className="space-y-3">
               <a
-                href="mailto:levin.aligway@email.com"
+                href="mailto:levinskyebenatiro@gmail.com"
                 className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-4 w-4 text-primary" />
-                levin.aligway@email.com
+                levinskyebenatiro@gmail.com
               </a>
               <a
-                href="https://github.com/levinaligway"
+                href="https://github.com/levinskyea"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Github className="h-4 w-4 text-primary" />
-                github.com/levinaligway
+                github.com/levinskyea
               </a>
               <a
-                href="https://linkedin.com/in/levinaligway"
+                href="https://linkedin.com/in/levinskyealigway"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Linkedin className="h-4 w-4 text-primary" />
-                linkedin.com/in/levinaligway
+                linkedin.com/in/levinskyealigway
               </a>
             </div>
           </div>
