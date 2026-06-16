@@ -94,7 +94,7 @@ export function Hero() {
         >
           <br />
           IT Support Engineer with hands-on experience in SQL, data
-          troubleshooting, reporting, and system integrations. <br />
+          troubleshooting, reporting, and system integrations. 
           Currently building Data Engineering solutions using Python,
           PostgreSQL, ETL workflows, and cloud technologies.{" "}
         </motion.p>
