@@ -76,14 +76,14 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-4 text-xl font-medium text-muted-foreground"
         >
-          Data Engineer • IT Support Engineer • Full-Stack Software Engineer
+          I build data-drive systems and scalable applications.
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="mb-2 text-sm text-muted-foreground"
+          className="mb-8 text-sm text-muted-foreground/70"
         >
           📍 Cebu, Philippines
         </motion.p>
@@ -116,7 +116,14 @@ export function Hero() {
           <Button size="lg" onClick={() => scrollTo("projects")}>
             View Projects
           </Button>
-          <br />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
+          className="mt-6 flex items-center justify-center gap-3"
+        >
           <Button size="icon" variant="ghost" asChild>
             <a
               href="https://github.com/levinskyea"
