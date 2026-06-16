@@ -4,25 +4,23 @@ import { Moon, Sun, Database, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useActiveSection, SECTIONS, type SectionId } from "@/hooks/use-active-section";
+import { cn } from "@/lib/utils";
 
-const links = [
-  { href: "projects", label: "Projects" },
-  { href: "dashboard", label: "Dashboard" },
-  { href: "skills", label: "Skills" },
-  { href: "experience", label: "Experience" },
-  { href: "contact", label: "Contact" }
+const NAV_LINKS: { id: SectionId; label: string }[] = [
+  { id: "projects", label: "Projects" },
+  { id: "dashboard", label: "Dashboard" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" }
 ];
-
-function scrollTo(id: string, onDone?: () => void) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  onDone?.();
-}
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { activeSection, scrollToSection, scrollToTop } = useActiveSection();
 
   useEffect(() => {
     setMounted(true);
@@ -33,15 +31,16 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled || menuOpen
           ? "border-b border-border/60 bg-background/95 backdrop-blur-md"
           : "bg-transparent"
-      }`}
+      )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <button
-          onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setMenuOpen(false); }}
+          onClick={() => scrollToTop(() => setMenuOpen(false))}
           className="flex items-center gap-2 font-bold text-primary"
         >
           <Database className="h-5 w-5" />
@@ -50,18 +49,26 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-6 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
+          {NAV_LINKS.map((l) => (
+            <li key={l.id}>
               <button
-                onClick={() => scrollTo(l.href)}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => scrollToSection(l.id)}
+                className={cn(
+                  "text-sm transition-colors hover:text-foreground",
+                  activeSection === l.id
+                    ? "font-medium text-foreground"
+                    : "text-muted-foreground"
+                )}
               >
                 {l.label}
               </button>
             </li>
           ))}
           <li>
-            <Link href="/etl-demo" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              href="/etl-demo"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
               ETL Demo
             </Link>
           </li>
@@ -78,7 +85,6 @@ export function Navbar() {
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
           )}
-          {/* Mobile hamburger */}
           <Button
             variant="ghost"
             size="icon"
@@ -95,11 +101,16 @@ export function Navbar() {
       {menuOpen && (
         <div className="border-t border-border/60 bg-background/95 px-6 pb-6 md:hidden">
           <ul className="flex flex-col gap-4 pt-4">
-            {links.map((l) => (
-              <li key={l.href}>
+            {NAV_LINKS.map((l) => (
+              <li key={l.id}>
                 <button
-                  onClick={() => scrollTo(l.href, () => setMenuOpen(false))}
-                  className="w-full text-left text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => scrollToSection(l.id, () => setMenuOpen(false))}
+                  className={cn(
+                    "w-full text-left text-sm transition-colors hover:text-foreground",
+                    activeSection === l.id
+                      ? "font-medium text-foreground"
+                      : "text-muted-foreground"
+                  )}
                 >
                   {l.label}
                 </button>

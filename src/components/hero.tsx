@@ -18,7 +18,7 @@ function scrollTo(id: string) {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
+    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
       {/* Subtle grid background */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.07]"
