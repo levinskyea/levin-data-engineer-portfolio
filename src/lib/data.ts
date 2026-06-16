@@ -18,7 +18,7 @@ export const projects = [
       "Incident identified → Investigation & resolution",
       "Resolution → Data reliability improvement"
     ],
-    tools: ["OpenSearch", "Grafana", "PostgreSQL", "Oracle SQL", "Python"],
+    tools: ["Python 3.10+", "Flask", "HTML + Jinja2", "CSS3", "JavaScript (ES2020+)", "Bootstrap 5.3", "psycopg2", "paramiko", "sshtunnel", "Git", "GitHub", "RotatingFileHandler", "Chart.js 4.4", "Aurora PostgreSQL (AWS RDS)"],
     github: "https://github.com/levinskyea"
   },
   {
@@ -40,7 +40,7 @@ export const projects = [
       "Centralized platform → Process & resource monitoring",
       "Automated workflows → Operational efficiency"
     ],
-    tools: ["Linux", "Cron", "Shell Script", "Python", "PostgreSQL", "Grafana"],
+    tools: ["Python 3.10+", "Flask", "APScheduler", "psycopg2", "Paramiko", "Flask-WTF / WTForms", "Aurora PostgreSQL (AWS RDS)", "SSH tunneling", "Bootstrap 5.3", "Vanilla JavaScript"],
     github: "https://github.com/levinskyea"
   }
 ];

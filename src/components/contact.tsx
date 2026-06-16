@@ -100,8 +100,7 @@ export function Contact() {
           </div>
 
           <div className="rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-            💡 Currently open to <span className="text-foreground font-medium">Data Engineer</span> and{" "}
-            <span className="text-foreground font-medium">Data Analyst</span> roles — remote or hybrid.
+            💡 Currently open to <span className="text-foreground font-medium">Data Engineer</span> roles — remote or hybrid.
           </div>
         </FadeIn>
       </div>
