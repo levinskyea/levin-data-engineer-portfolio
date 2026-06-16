@@ -16,10 +16,27 @@ export const projects = [
       "OpenSearch → Log analysis & anomaly detection",
       "Grafana → System & data metric dashboards",
       "Incident identified → Investigation & resolution",
-      "Resolution → Data reliability improvement"
+      "Resolution → Data reliability improvement",
     ],
-    tools: ["Python 3.10+", "Flask", "HTML + Jinja2", "CSS3", "JavaScript (ES2020+)", "Bootstrap 5.3", "psycopg2", "paramiko", "sshtunnel", "Git", "GitHub", "RotatingFileHandler", "Chart.js 4.4", "Aurora PostgreSQL (AWS RDS)"],
-    github: "https://github.com/levinskyea"
+    tools: [
+      "Python",
+      "Flask",
+      "HTML",
+      "Jinja2",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "psycopg2",
+      "paramiko",
+      "sshtunnel",
+      "Git",
+      "GitHub",
+      "RotatingFileHandler",
+      "Chart.js",
+      "PostgreSQL",
+      "Oracle SQL",
+    ],
+    github: "https://github.com/levinskyea/kngs-salmon",
   },
   {
     slug: "scallop",
@@ -38,11 +55,22 @@ export const projects = [
       "System & application → Performance data collection",
       "Data processing → Report generation",
       "Centralized platform → Process & resource monitoring",
-      "Automated workflows → Operational efficiency"
+      "Automated workflows → Operational efficiency",
     ],
-    tools: ["Python 3.10+", "Flask", "APScheduler", "psycopg2", "Paramiko", "Flask-WTF / WTForms", "Aurora PostgreSQL (AWS RDS)", "SSH tunneling", "Bootstrap 5.3", "Vanilla JavaScript"],
-    github: "https://github.com/levinskyea"
-  }
+    tools: [
+      "Python",
+      "Flask",
+      "APScheduler",
+      "psycopg2",
+      "Paramiko",
+      "Flask-WTF / WTForms",
+      "PostgreSQL",
+      "SSH tunneling",
+      "Bootstrap",
+      "Vanilla JavaScript",
+    ],
+    github: "https://github.com/levinskyea",
+  },
 ];
 
 export type Project = (typeof projects)[0];
