@@ -9,12 +9,12 @@ import { useScrollContext } from "@/context/scroll-context";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { id: SectionId; label: string }[] = [
-  { id: "dashboard", label: "About" },
   { id: "projects", label: "Projects" },
-  { id: "etl-demo", label: "ETL Demo" },
-  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" }
+  { id: "skills", label: "Skills" },
+  { id: "dashboard", label: "Dashboard" },
+  { id: "etl-demo", label: "ETL Demo" },
+  { id: "contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -35,7 +35,9 @@ export function Navbar() {
   }, []);
 
   const activeSectionId: SectionId | null =
-    pathname === "/" ? activeSection : (pathname.replace("/", "") as SectionId) || null;
+    pathname === "/"
+      ? activeSection
+      : (pathname.replace("/", "") as SectionId) || null;
 
   function handleNavClick(id: SectionId, closeMenu?: () => void) {
     closeMenu?.();
@@ -67,7 +69,7 @@ export function Navbar() {
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled || menuOpen
           ? "border-b border-border/60 bg-background/95 backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -86,7 +88,9 @@ export function Navbar() {
                 onClick={() => handleNavClick(l.id)}
                 className={cn(
                   "text-sm transition-colors hover:text-foreground",
-                  isActive(l.id) ? "font-bold text-foreground" : "text-muted-foreground"
+                  isActive(l.id)
+                    ? "font-bold text-foreground"
+                    : "text-muted-foreground",
                 )}
               >
                 {l.label}
@@ -103,7 +107,11 @@ export function Navbar() {
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
             </Button>
           )}
           <Button
@@ -113,7 +121,11 @@ export function Navbar() {
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {menuOpen ? (
+              <X className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
+            )}
           </Button>
         </div>
       </nav>
@@ -128,7 +140,9 @@ export function Navbar() {
                   onClick={() => handleNavClick(l.id, () => setMenuOpen(false))}
                   className={cn(
                     "w-full text-left text-sm transition-colors hover:text-foreground",
-                    isActive(l.id) ? "font-bold text-foreground" : "text-muted-foreground"
+                    isActive(l.id)
+                      ? "font-bold text-foreground"
+                      : "text-muted-foreground",
                   )}
                 >
                   {l.label}
