@@ -10,7 +10,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     default: "Levin Skye Aligway | Data Engineer",
-    template: "%s | Levin Skye Aligway"
+    template: "%s | Levin Skye Aligway",
   },
   description:
     "Portfolio of Levin Skye Aligway — IT Support Engineer transitioning into Data Engineering. Specializing in SQL, PostgreSQL, Oracle, OpenSearch, Grafana, and data pipeline automation.",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "OpenSearch",
     "Grafana",
     "data pipeline",
-    "Levin Aligway"
+    "Levin Aligway",
   ],
   authors: [{ name: "Levin Skye Aligway" }],
   creator: "Levin Skye Aligway",
@@ -34,19 +34,19 @@ export const metadata: Metadata = {
     title: "Levin Skye Aligway | Data Engineer Portfolio",
     description:
       "IT Support Engineer transitioning into Data Engineering — SQL, monitoring, and automation.",
-    siteName: "Levin Skye Aligway Portfolio"
+    siteName: "Levin Skye Aligway Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Levin Skye Aligway | Data Engineer Portfolio",
     description:
-      "IT Support Engineer transitioning into Data Engineering — SQL, monitoring, and automation."
+      "IT Support Engineer transitioning into Data Engineering — SQL, monitoring, and automation.",
   },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
