@@ -88,18 +88,18 @@ export function EtlDemo() {
   return (
     <section id="etl-demo" className="bg-muted/30 py-24">
       <div className="mx-auto max-w-6xl px-6">
-      <FadeIn>
-        <div className="mb-2 flex items-center gap-3">
-          <h2 className="text-3xl font-bold">ETL Pipeline Demo</h2>
-          <Badge variant="secondary">Interactive</Badge>
-        </div>
-        <p className="mb-10 text-muted-foreground">
-          A mock Extract → Transform → Load pipeline. Click Run to simulate ingesting raw
-          system events, normalising them, deduplicating, and loading into a target table.
-        </p>
-      </FadeIn>
+        <FadeIn>
+          <div className="mb-2 flex items-center gap-3">
+            <h2 className="text-3xl font-bold">ETL Pipeline Demo</h2>
+            <Badge variant="secondary">Interactive</Badge>
+          </div>
+          <p className="mb-10 text-muted-foreground">
+            A mock Extract → Transform → Load pipeline. Click Run to simulate ingesting raw
+            system events, normalising them, deduplicating, and loading into a target table.
+          </p>
+        </FadeIn>
 
-      <FadeIn delay={0.1}>
+        <FadeIn delay={0.1}>
         {/* Pipeline stages indicator */}
         <div className="mb-10 flex flex-wrap items-center gap-2 text-sm font-medium">
           {(["Extract", "Transform", "Load"] as const).map((s, i) => {
@@ -267,7 +267,7 @@ export function EtlDemo() {
             </Card>
           )}
         </div>
-      </FadeIn>
+        </FadeIn>
       </div>
     </section>
   );
