@@ -42,7 +42,7 @@ export function Contact() {
                   <div className="mb-4 text-4xl">✅</div>
                   <h3 className="mb-2 text-lg font-semibold">Message sent!</h3>
                   <p className="text-sm text-muted-foreground">
-                    Thanks for reaching out. I'll get back to you soon.
+                    Thanks for reaching out. I&apos;ll get back to you soon.
                   </p>
                 </div>
               ) : (
