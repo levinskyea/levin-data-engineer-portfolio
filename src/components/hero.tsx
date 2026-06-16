@@ -136,7 +136,7 @@ export function Hero() {
         >
           <Button size="lg" variant="outline" asChild>
             <a
-              href="/Levin Skye_Aligway_Resume_v2.pdf"
+              href="/Levin Skye_Aligway_Resume.pdf"
               download
               aria-label="Download resume PDF"
             >
