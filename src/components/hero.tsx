@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
+import { Typewriter } from "@/components/typewriter";
 
 function YoutubeIcon() {
   return (
@@ -62,10 +63,11 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
         >
-          Levin Skye{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-            Aligway
-          </span>
+          <Typewriter
+            text="Levin Skye Aligway"
+            speed={80}
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent"
+          />
         </motion.h1>
 
         <motion.p
