@@ -4,27 +4,36 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
   {
     role: "IT Support Engineer",
-    company: "Kuehne+Nagel",
-    period: "2022 – Present",
+    company: "Kuehne + Nagel Global Services Inc.",
+    period: "September 2023 – Present",
     highlights: [
-      "Built and maintained SALMON — an automated incident management tool using OpenSearch + PostgreSQL, reducing MTTR by ~40%.",
-      "Developed SCALLOP for cron-based ETL orchestration with Oracle DB, covering 20+ scheduled jobs with full audit logging.",
-      "Authored complex SQL reports (PostgreSQL, Oracle) consumed by operations and management stakeholders.",
-      "Managed Grafana dashboards for real-time system health visibility across 50+ monitored services.",
-      "Led data troubleshooting sessions for production incidents, performing root-cause analysis via log queries."
+      "Investigated and resolved data-related incidents using PostgreSQL and Oracle SQL, ensuring data accuracy and integrity across systems (e.g., SALOG, BPA).",
+      "Generated custom reports and data extracts based on user requirements, supporting operational and business decision-making.",
+      "Performed root cause analysis on data discrepancies and pipeline issues, collaborating with cross-functional teams to improve data reliability and system performance."
     ],
-    tags: ["SQL", "PostgreSQL", "Oracle", "OpenSearch", "Grafana", "Python"]
+    tags: ["PostgreSQL", "Oracle SQL", "Data Analysis", "Incident Management", "Reporting"]
   },
   {
-    role: "Systems Support Analyst",
-    company: "Previous Company",
-    period: "2020 – 2022",
+    role: "Junior JavaScript Engineer",
+    company: "CoInspect Philippines Inc.",
+    period: "July 2022 – July 2023",
     highlights: [
-      "Maintained SQL databases and generated weekly performance reports for 3 production environments.",
-      "Automated repetitive data extraction tasks using Python scripts, saving ~6 hours/week.",
-      "Participated in incident bridge calls; documented resolution steps in ServiceNow."
+      "Developed and integrated data-driven features using JavaScript, TypeScript, ReactJS, and Next.js, working with structured data from backend services.",
+      "Utilized SQL (PostgreSQL/Oracle) for querying and managing application data, supporting backend functionality and optimization.",
+      "Collaborated with Agile teams to design and implement data flow and API integrations, ensuring efficient data exchange between systems."
     ],
-    tags: ["SQL", "Python", "ServiceNow", "Reporting"]
+    tags: ["JavaScript", "TypeScript", "React", "Next.js", "PostgreSQL", "Oracle", "REST APIs"]
+  },
+  {
+    role: "Software QA Specialist Intern",
+    company: "CoInspect Philippines Inc.",
+    period: "July 2021 – December 2021",
+    highlights: [
+      "Conducted data validation and API testing using Postman and SQL queries to ensure consistency and accuracy of application data.",
+      "Identified and documented defects related to data processing and integration, improving data quality and system stability.",
+      "Supported testing of workflows involving data pipelines and system integrations, ensuring outputs aligned with business requirements."
+    ],
+    tags: ["SQL", "Postman", "API Testing", "Data Validation", "QA"]
   }
 ];
 

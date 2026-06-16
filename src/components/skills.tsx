@@ -5,22 +5,42 @@ const skillGroups = [
   {
     title: "Data & Databases",
     icon: "🗄️",
-    skills: ["PostgreSQL", "Oracle DB", "PL/SQL", "SQL", "Data Modeling", "ETL Pipelines"]
+    skills: ["PostgreSQL", "Oracle SQL", "Data Querying", "Data Validation", "Data Analysis"]
   },
   {
-    title: "Monitoring & Observability",
+    title: "Data Processing & Integration",
+    icon: "🔄",
+    skills: ["API Integration", "Data Transformation", "Data Flow Design"]
+  },
+  {
+    title: "Reporting & Monitoring",
     icon: "📊",
-    skills: ["OpenSearch", "Grafana", "Kibana", "Log Analysis", "Alert Management"]
+    skills: ["Report Generation", "OpenSearch", "Grafana"]
   },
   {
     title: "Programming & Scripting",
     icon: "💻",
-    skills: ["Python", "Shell Script", "Cron", "REST APIs", "Data Parsing"]
+    skills: ["Python", "JavaScript", "TypeScript", "Java", "Flask"]
   },
   {
-    title: "Tools & Platforms",
+    title: "DevOps & Version Control",
+    icon: "⚙️",
+    skills: ["Git", "GitHub", "GitLab", "GitHub Actions", "Ansible Tower"]
+  },
+  {
+    title: "Tools & Collaboration",
     icon: "🛠️",
-    skills: ["Git", "Linux", "Jira", "Confluence", "ServiceNow", "Docker"]
+    skills: ["Jira", "Confluence (KB)", "MS Teams", "MS Office", "Agile", "Scrum"]
+  },
+  {
+    title: "QA & Testing",
+    icon: "🧪",
+    skills: ["Postman", "TestRail", "API Testing", "Selenium (Web)", "Appium (Mobile)"]
+  },
+  {
+    title: "IT Support & Service Management",
+    icon: "🎧",
+    skills: ["Incident Management", "Root Cause Analysis", "Troubleshooting", "Customer Service", "Attention to Detail"]
   }
 ];
 

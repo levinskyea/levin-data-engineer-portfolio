@@ -2,45 +2,46 @@ export const projects = [
   {
     slug: "salmon",
     title: "SALMON",
-    subtitle: "Monitoring & Incident Management Tool",
+    subtitle: "SALOG Monitoring & Incident Management Tool",
     description:
-      "Centralized monitoring platform that aggregates system alerts from OpenSearch and Grafana, auto-classifies incidents, and generates SQL-powered reports for stakeholder review.",
+      "Internal tool supporting incident management and system monitoring, enabling efficient tracking and handling of data-related issues in SALOG using OpenSearch and Grafana.",
     longDescription:
-      "SALMON (System Alert & Log Monitoring and Operations Nexus) was built to replace manual email-based incident tracking. It pulls alert data from OpenSearch indices, correlates events using PostgreSQL, and surfaces dashboards in Grafana for on-call engineers.",
+      "SALMON (SALOG Monitoring & Incident Management Tool) was developed to support incident management and system monitoring for SALOG. It leverages OpenSearch and Grafana to analyze logs and visualize system and data metrics, improving visibility into system behavior and anomalies. The tool enables fast identification and investigation of data inconsistencies and system irregularities, accelerating incident resolution and improving overall data reliability.",
     problem:
-      "Incidents were tracked manually via email threads, causing delayed responses, missed SLAs, and no historical data for trend analysis.",
+      "Data-related incidents and system irregularities in SALOG were difficult to track, with limited visibility into logs and metrics, leading to slow resolution times and recurring data inconsistencies.",
     solution:
-      "Built an automated pipeline that ingests OpenSearch alerts into PostgreSQL, applies classification rules, and exposes a Grafana dashboard with drill-down SQL reports.",
+      "Developed an internal monitoring tool using OpenSearch for log analysis and Grafana for metric visualization, enabling proactive detection of anomalies and faster incident resolution.",
     dataFlow: [
-      "OpenSearch → Alert ingestion (cron every 5 min)",
-      "PostgreSQL → Classification & deduplication",
-      "Grafana → Real-time dashboard",
-      "Scheduled SQL report → Email distribution"
+      "SALOG system → Log ingestion into OpenSearch",
+      "OpenSearch → Log analysis & anomaly detection",
+      "Grafana → System & data metric dashboards",
+      "Incident identified → Investigation & resolution",
+      "Resolution → Data reliability improvement"
     ],
-    tools: ["PostgreSQL", "OpenSearch", "Grafana", "Python", "Cron", "SQL"],
-    github: "https://github.com/levinaligway"
+    tools: ["OpenSearch", "Grafana", "PostgreSQL", "Oracle SQL", "Python"],
+    github: "https://github.com/levinskyea"
   },
   {
     slug: "scallop",
     title: "SCALLOP",
-    subtitle: "System Management + Cron Automation",
+    subtitle: "System Control & Administration for Linux Lifecycle Operations",
     description:
-      "Automated system health checks and scheduled data pipeline orchestration using cron jobs, with Oracle DB integration and exception reporting.",
+      "Centralized platform for server, application, and system performance monitoring with cron-based job scheduling for automated report generation and recurring data processing tasks.",
     longDescription:
-      "SCALLOP (Scheduled Cron Automation for Log & Lifecycle Operations Platform) manages recurring data tasks — from Oracle ETL jobs to log rotation — and surfaces exceptions in a centralized ops table for DBA review.",
+      "SCALLOP (System Control & Administration for Linux Lifecycle Operations) is a centralized platform built to improve system visibility and operational control across servers and applications. It implements cron-based job scheduling for automated report generation and recurring tasks, supporting data processing and operational efficiency. SCALLOP also enables system and data management capabilities, allowing users to monitor processes, configure resources, and automate workflows.",
     problem:
-      "Ad-hoc scripts ran inconsistently across servers, with no centralized logging or failure alerting. DBAs had no visibility into job success/failure rates.",
+      "System and application monitoring was fragmented across servers with no centralized control, and recurring operational tasks were handled manually, leading to inefficiencies and limited visibility into system performance.",
     solution:
-      "Standardized all cron-based jobs under SCALLOP's orchestration layer. Each job logs start/end/status to an Oracle audit table. Failures trigger immediate alerts.",
+      "Built a centralized monitoring and automation platform that consolidates system visibility, implements cron-based scheduling for recurring tasks, and provides tools for process monitoring, resource configuration, and workflow automation.",
     dataFlow: [
-      "Cron trigger → Job executor",
-      "Oracle DB → ETL extraction",
-      "Transformation → Staging tables",
-      "Audit log → Exception report",
-      "Alerting → On-call notification"
+      "Cron scheduler → Trigger automated jobs",
+      "System & application → Performance data collection",
+      "Data processing → Report generation",
+      "Centralized platform → Process & resource monitoring",
+      "Automated workflows → Operational efficiency"
     ],
-    tools: ["Oracle DB", "SQL", "Cron", "Python", "Shell Script", "PL/SQL"],
-    github: "https://github.com/levinaligway"
+    tools: ["Linux", "Cron", "Shell Script", "Python", "PostgreSQL", "Grafana"],
+    github: "https://github.com/levinskyea"
   }
 ];
 
