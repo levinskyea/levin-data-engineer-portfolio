@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
+
 export function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
@@ -71,8 +75,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          <Button size="lg" asChild>
-            <a href="#projects">View Projects</a>
+          <Button size="lg" onClick={() => scrollTo("projects")}>
+            View Projects
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="/resume.pdf" download aria-label="Download resume PDF">
@@ -99,9 +103,9 @@ export function Hero() {
         transition={{ duration: 0.5, delay: 1.2 }}
         className="absolute bottom-8"
       >
-        <a href="#projects" aria-label="Scroll to projects">
+        <button onClick={() => scrollTo("projects")} aria-label="Scroll to projects">
           <ArrowDown className="h-5 w-5 animate-bounce text-muted-foreground" />
-        </a>
+        </button>
       </motion.div>
     </section>
   );
