@@ -77,7 +77,7 @@ export function Navbar() {
                 className={cn(
                   "text-sm transition-colors hover:text-foreground",
                   pathname === "/" && activeSection === l.id
-                    ? "font-medium text-foreground"
+                    ? "font-bold text-foreground"
                     : "text-muted-foreground",
                 )}
               >
@@ -142,7 +142,7 @@ export function Navbar() {
                   className={cn(
                     "w-full text-left text-sm transition-colors hover:text-foreground",
                     pathname === "/" && activeSection === l.id
-                      ? "font-medium text-foreground"
+                      ? "font-bold text-foreground"
                       : "text-muted-foreground",
                   )}
                 >
